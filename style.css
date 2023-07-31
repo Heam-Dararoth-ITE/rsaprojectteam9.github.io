@@ -1,20 +1,76 @@
-body {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Apply a background color to the body and center content vertically */
+  body {
+    background-color: #f8f8f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     font-family: Arial, sans-serif;
-    text-align: center;
-}
-
-.container {
-    margin: 50px auto;
-    max-width: 600px;
-}
-
-textarea {
+  }
+  
+  /* Style the container that holds all elements */
+  .container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
     width: 100%;
-    height: 100px;
-    margin: 10px 0;
-}
-
-button {
+  }
+  
+  /* Style the headings */
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Style the textareas for plaintext, ciphertext, and decrypted text */
+  textarea {
+    width: 100%;
+    padding: 10px;
+    resize: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  /* Style the encrypt and decrypt buttons */
+  button {
     padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
     font-size: 16px;
-}
+  }
+  
+  /* Apply different background color on hover for buttons */
+  button:hover {
+    background-color: #2f00ff;
+  }
+  
+  /* Disable the decrypt button by default */
+  button:nth-of-type(2) {
+    background-color: #ff0000;
+    cursor: pointer;
+  }
+  
+  /* Enable the decrypt button only when there is ciphertext */
+  textarea:nth-of-type(3):not(:empty) + button {
+    background-color: #007bff;
+    cursor: pointer;
+  }
+  
+  /* Apply some margin between the textareas and buttons */
+  textarea,
+  button {
+    margin-bottom: 15px;
+  }
